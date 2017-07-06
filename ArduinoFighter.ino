@@ -1,6 +1,6 @@
 /*
  * ArduinoFighter By FinlayDaG33k
- * Version: 0.1
+ * Version: 0.2
  * Licensed under the "FinlayDaG33k License"
  * 
  * 
@@ -33,22 +33,29 @@ const int jUp = 21; // Joystick Up
 const int jLeft = 20; // Joystick Left
 const int jDown = 19; // Joystick Down
 const int jRight = 18; // Joystick Right
+/* Menu stuff */
+const int bStart = 15; // Start Button
+const int bSelect = 14; // Select Button
+
 
 /* Define all buttons for PC
 ----------*/
 /* Punches */
-const int kPunchL = 'q'; // Low Punch
-const int kPunchM = 'w'; // Medium Punch
-const int kPunchH = 'e'; // Heavy Punch
+const int kPunchL = 'q'; // Low Punch (q)
+const int kPunchM = 'w'; // Medium Punch (w)
+const int kPunchH = 'e'; // Heavy Punch (e)
 /* Kicks */
-const int kKickL = 'a'; // Low Kick
-const int kKickM = 's'; // Medium Kick
-const int kKickH = 'd'; // Heavy Kick
+const int kKickL = 'a'; // Low Kick (a)
+const int kKickM = 's'; // Medium Kick (s)
+const int kKickH = 'd'; // Heavy Kick (d)
 /* Movement */
 const int kUp = 218; // Arrow Up
 const int kLeft = 216; // Arrow Left
 const int kDown = 217; // Arrow Down
 const int kRight = 215; // Arrow Right
+/* Menu stuff */
+const int jStart = 176; // ENTER key
+const int jSelect = 177; // ESC key
 
 /* Run the setup
 ----------*/
@@ -68,6 +75,9 @@ void setup() {
   pinMode(jLeft, INPUT_PULLUP); // Joystick Left
   pinMode(jDown, INPUT_PULLUP); // Joystick Down
   pinMode(jRight, INPUT_PULLUP); // Joystick Right
+  /* Menu stuff */
+  pinMode(jStart, INPUT_PULLUP); // Start button
+  pinMode(jSelect, INPUT_PULLUP); // Select button
 }
 
 /* This code will be run in a continuous loop!
@@ -88,6 +98,9 @@ void loop() {
   int state_jLeft = digitalRead(jLeft); // Joystick Left
   int state_jDown = digitalRead(jDown); // Joystick Down
   int state_jRight = digitalRead(jRight); // Joystick Right
+  /* Menu stuff */
+  int state_bStart = digitalRead(bStart); // Start button
+  int state_bSelect = digitalRead(bSelect); // Select button
 
   /* Press the buttons on PC!
   ----------*/
@@ -153,4 +166,17 @@ void loop() {
   }else{
     Keyboard.release(kRight);
   }
+  /* Menu: Start */
+  if(state_bStart == LOW){
+    Keyboard.press(kStart);
+  }else{
+    Keyboard.release(kStart);
+  }
+  /* Menu: Select */
+  if(state_bSelect == LOW){
+    Keyboard.press(kSelect);
+  }else{
+    Keyboard.release(kSelect);
+  }
 }
+
