@@ -54,8 +54,8 @@ const int kLeft = 216; // Arrow Left
 const int kDown = 217; // Arrow Down
 const int kRight = 215; // Arrow Right
 /* Menu stuff */
-const int jStart = 176; // ENTER key
-const int jSelect = 177; // ESC key
+const int kStart = 176; // ENTER key
+const int kSelect = 177; // ESC key
 
 /* Run the setup
 ----------*/
@@ -76,8 +76,8 @@ void setup() {
   pinMode(jDown, INPUT_PULLUP); // Joystick Down
   pinMode(jRight, INPUT_PULLUP); // Joystick Right
   /* Menu stuff */
-  pinMode(jStart, INPUT_PULLUP); // Start button
-  pinMode(jSelect, INPUT_PULLUP); // Select button
+  pinMode(bStart, INPUT_PULLUP); // Start button
+  pinMode(bSelect, INPUT_PULLUP); // Select button
 }
 
 /* This code will be run in a continuous loop!
