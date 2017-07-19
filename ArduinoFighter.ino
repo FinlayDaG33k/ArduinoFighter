@@ -21,18 +21,18 @@
 /* Define all pins for the inputs
   ----------*/
 /* Punches */
-const int bPunchL = 2; // Low Punch Button
-const int bPunchM = 3; // Medium Punch Button
-const int bPunchH = 4; // Heavy Punch Button
+const int bPunchL = 8; // Low Punch Button
+const int bPunchM = 7; // Medium Punch Button
+const int bPunchH = 6; // Heavy Punch Button
 /* Kicks */
-const int bKickL = 5; // Low Kick Button
-const int bKickM = 6; // Medium Kick Button
-const int bKickH = 7; // Heavy Kick Button
+const int bKickL = 4; // Low Kick Button
+const int bKickM = 3; // Medium Kick Button
+const int bKickH = 2; // Heavy Kick Button
 /* Joystick */
-const int jUp = 21; // Joystick Up
-const int jLeft = 20; // Joystick Left
-const int jDown = 19; // Joystick Down
-const int jRight = 18; // Joystick Right
+const int jUp = 20; // Joystick Up
+const int jLeft = 18; // Joystick Left
+const int jDown = 21; // Joystick Down
+const int jRight = 19; // Joystick Right
 /* Menu stuff */
 const int bStart = 15; // Start Button
 const int bSelect = 14; // Select Button
@@ -90,9 +90,9 @@ void loop() {
   int state_bPunchM = digitalRead(bPunchM); // Medium Punch Button
   int state_bPunchH = digitalRead(bPunchH); // Heavy Punch Button
   /* Kicks */
-  int state_bKickL = digitalRead(bPunchL); // Low Kick Button
-  int state_bKickM = digitalRead(bPunchM); // Medium Kick Button
-  int state_bKickH = digitalRead(bPunchH); // Heavy Kick Button
+  int state_bKickL = digitalRead(bKickL); // Low Kick Button
+  int state_bKickM = digitalRead(bKickM); // Medium Kick Button
+  int state_bKickH = digitalRead(bKickH); // Heavy Kick Button
   /* Joystick */
   int state_jUp = digitalRead(jUp); // Joystick Up
   int state_jLeft = digitalRead(jLeft); // Joystick Left
